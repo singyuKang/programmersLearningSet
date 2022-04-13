@@ -1,19 +1,32 @@
 def solution(progresses, speeds):
     answer = []
-    pointer = 0
-    for i in range(100):
-        for j in range(len(progresses)):
-            progresses[j] = progresses[j] + speeds[j]
-            if(progresses[j]>100):
-                progresses[j] = 100
+    time = 0
+    count =0
+
+    while(len(progresses) > 0):
+        if(progresses[0]+time*speeds[0] >= 100):
+            progresses.pop(0)
+            speeds.pop(0)
+            count +=1
+
+        else:
+            if(count>=1):
+                answer.append(count)
+                count =0
+            time +=1
+    answer.append(count)
     
+
+
+
+
+                
     
+    # print(progresses)
     return answer
 
 progresses = [93, 30, 55]
 speeds = [1, 30, 5]
 
-pointer = 1
-for pointer in range(2):
-    print("hello")
+
 print(solution(progresses, speeds))
