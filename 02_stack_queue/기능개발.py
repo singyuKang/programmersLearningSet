@@ -16,12 +16,6 @@ def solution(progresses, speeds):
             time +=1
     answer.append(count)
     
-
-
-
-
-                
-    
     # print(progresses)
     return answer
 
