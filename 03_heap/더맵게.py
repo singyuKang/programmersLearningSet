@@ -16,4 +16,4 @@ def solution(scoville, K):
 scoville = [1, 2, 3, 9, 10, 12]
 K = 7
 
-print(solution(scoville, K))
+print(solution1(scoville, K))
