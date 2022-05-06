@@ -6,7 +6,7 @@ visited_dfs = [0]*(n+1)
 
 # print(graph)
 
-for i in range(n+1):
+for i in range(m):
     a,b = map(int, input().split())
     graph[a][b] = graph[b][a] = 1
 
@@ -17,7 +17,6 @@ def dfs(v):
     for i in range(n+1):
         if visited_dfs[i] == 0 and graph[i][v]:
             dfs(i)
-dfs(v)
 
 visited_bfs = [0]*(n+1)
 
@@ -33,6 +32,8 @@ def bfs(v):
             if visited_bfs[i] == 0 and graph[i][node]:
                 que.append(i)
                 visited_bfs[i] = 1
+dfs(v)
+print()
 bfs(v)
 
 
